@@ -1,0 +1,10 @@
+site_name: Cyber & AI Governance Hub
+engine: zensical
+theme:
+  name: material
+  palette:
+    primary: blue grey # 顧問級穩重色調
+    accent: indigo
+  features:
+    - content.code.copy
+    - navigation.expand
