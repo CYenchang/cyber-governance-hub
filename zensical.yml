@@ -3,8 +3,20 @@ engine: zensical
 theme:
   name: material
   palette:
-    primary: blue grey # 顧問級穩重色調
+    primary: blue grey
     accent: indigo
   features:
     - content.code.copy
     - navigation.expand
+
+# 加上這個區塊，網頁才會自動抓取資料夾裡的檔案
+plugins:
+  - search
+  - awesome-pages
+
+# 手動指定導覽順序，確保顧問洞察放在顯眼位置
+nav:
+  - 首頁: index.md
+  - 國際標準: 01_Standards/
+  - 實務案例: 02_UseCases/
+  - 顧問洞察: 03_Insights/
