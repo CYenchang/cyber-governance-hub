@@ -1,5 +1,4 @@
 site_name: Cyber & AI Governance Hub
-engine: zensical
 theme:
   name: material
   palette:
@@ -20,3 +19,9 @@ nav:
   - 國際標準: 01_Standards/
   - 實務案例: 02_UseCases/
   - 顧問洞察: 03_Insights/
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.mermaid_format
