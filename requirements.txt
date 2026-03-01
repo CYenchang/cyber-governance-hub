@@ -1,2 +1,3 @@
-mkdocs-material
-mkdocs-awesome-pages-plugin
+zensical-core
+zensical-theme-material
+zensical-plugin-awesome-pages
