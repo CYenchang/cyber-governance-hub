@@ -1,13 +1,26 @@
 name: deploy-site
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+permissions:
+  contents: write
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: 3.x }
-      - run: pip install -r requirements.txt
-      - run: zensical build --deploy --force
+        with:
+          python-version: 3.x
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Build Site
+        # 修正：單純編譯，產出檔案會放在 ./site 資料夾
+        run: zensical build
+      - name: Deploy to GitHub Pages
+        # 這是專門負責推送的工具，能確保身分驗證無誤
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
